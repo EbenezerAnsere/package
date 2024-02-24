@@ -29,6 +29,18 @@ class Login {
         "https://practicetestautomation.com/logged-in-successfully/"
       );
   }
+
+  myusername() {
+    return cy.get("[name=username]");
+  }
+
+  mypassword() {
+    return cy.get("[name=password]");
+  }
+
+  mysubmit() {
+    return cy.get("#submit");
+  }
 }
 
 export default Login;

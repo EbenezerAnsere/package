@@ -7,7 +7,7 @@ const {
   And,
 } = require("cypress-cucumber-preprocessor/steps");
 
-import Login from "./page_object_model/login";
+import Login from "../../page_object_model/login";
 
 const login = new Login();
 
@@ -31,3 +31,12 @@ And("the user clicks on login button", () => {
 Then("the user is redirected to the homepage", () => {
   login.dashboard();
 });
+
+When('the user enters incorrect username and correct password', ()=>{
+  const incorrectusername = '3Student2'
+  const correctpassword = 'Password123'
+  login.open()
+  login.myusername().type(incorrectusername)
+  login.mypassword().type(correctpassword)
+  login.mysubmit().click()
+})
